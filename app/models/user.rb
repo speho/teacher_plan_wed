@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :projects,
+             :through => :comments,
+             :source => :improvement_plan
+
   # Validations
 
   # Include default devise modules. Others available are:

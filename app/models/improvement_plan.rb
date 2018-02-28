@@ -10,6 +10,10 @@ class ImprovementPlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :collaborators,
+             :through => :comments,
+             :source => :writer
+
   # Validations
 
 end
