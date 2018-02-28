@@ -5,4 +5,6 @@ class ActionStep < ApplicationRecord
 
   # Validations
 
+  validates :state, :length => { :minimum => 0, :maximum => 5 }
+
 end
