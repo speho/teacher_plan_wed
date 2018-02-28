@@ -25,7 +25,7 @@
         <td><%= action_step.point_man.email %></td>
         <td><%= action_step.resources %></td>
         <td><%= action_step.success_measurements %></td>
-        <td><%= action_step.goal_id %></td>
+        <td><%= action_step.goal.created_at %></td>
         <td>
           <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>
           <a href="/action_steps/<%= action_step.id %>/edit" class="btn btn-warning">Edit</a>
