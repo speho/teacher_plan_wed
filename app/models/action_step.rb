@@ -1,6 +1,10 @@
 class ActionStep < ApplicationRecord
   # Direct associations
 
+  belongs_to :point_man,
+             :class_name => "User",
+             :foreign_key => "user_id"
+
   belongs_to :goal
 
   # Indirect associations
