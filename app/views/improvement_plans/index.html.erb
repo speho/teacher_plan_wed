@@ -17,7 +17,7 @@
       <% @improvement_plans.each do |improvement_plan| %>
       <tr>
         <td><%= improvement_plan.summary %></td>
-        <td><%= improvement_plan.user_id %></td>
+        <td><%= improvement_plan.coach.email %></td>
         <td>
           <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">Show</a>
           <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">Edit</a>
