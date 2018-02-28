@@ -9,7 +9,13 @@
       <dd><%= @improvement_plan.summary %></dd>
 
       <dt>User</dt>
-      <dd><%= @improvement_plan.user_id %></dd>
+      <dd>
+        <% if @improvement_plan.coach.present? %>
+          <a href="/users/<%= @improvement_plan.user_id %>">
+            <%= @improvement_plan.coach.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

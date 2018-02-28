@@ -17,7 +17,13 @@
       <% @improvement_plans.each do |improvement_plan| %>
       <tr>
         <td><%= improvement_plan.summary %></td>
-        <td><%= improvement_plan.coach.email %></td>
+        <td>
+          <% if improvement_plan.coach.present? %>
+            <a href="/users/<%= improvement_plan.coach.id %>">
+              <%= improvement_plan.coach.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">Show</a>
           

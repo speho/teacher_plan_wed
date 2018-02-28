@@ -12,7 +12,13 @@
       <dd><%= @action_step.target_date %></dd>
 
       <dt>User</dt>
-      <dd><%= @action_step.user_id %></dd>
+      <dd>
+        <% if @action_step.point_man.present? %>
+          <a href="/users/<%= @action_step.user_id %>">
+            <%= @action_step.point_man.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Resources</dt>
       <dd><%= @action_step.resources %></dd>
@@ -21,7 +27,13 @@
       <dd><%= @action_step.success_measurements %></dd>
 
       <dt>Goal</dt>
-      <dd><%= @action_step.goal_id %></dd>
+      <dd>
+        <% if @action_step.goal.present? %>
+          <a href="/goals/<%= @action_step.goal_id %>">
+            <%= @action_step.goal.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

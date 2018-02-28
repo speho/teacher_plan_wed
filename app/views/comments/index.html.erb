@@ -17,9 +17,27 @@
 
       <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.writer.email %></td>
-        <td><%= comment.action_step.state %></td>
-        <td><%= comment.improvement_plan.summary %></td>
+        <td>
+          <% if comment.writer.present? %>
+            <a href="/users/<%= comment.writer.id %>">
+              <%= comment.writer.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment.action_step.present? %>
+            <a href="/action_steps/<%= comment.action_step.id %>">
+              <%= comment.action_step.state %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if comment.improvement_plan.present? %>
+            <a href="/improvement_plans/<%= comment.improvement_plan.id %>">
+              <%= comment.improvement_plan.summary %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/comments/<%= comment.id %>" class="btn btn-primary">Show</a>
           <a href="/comments/<%= comment.id %>/edit" class="btn btn-warning">Edit</a>
